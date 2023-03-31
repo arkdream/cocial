@@ -24,15 +24,11 @@ jobs:
         with:
           build: pnpm run build 
           start: pnpm run start
-
-      - name: Build for pages with cloudflare 
-        with:
-          run : pnpx @cloudflare/next-on-pages --experimental-minify
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: "cocial" 
-          directory: /.vercel/output/static
+          directory: .next
 
