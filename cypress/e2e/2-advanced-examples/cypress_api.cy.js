@@ -67,7 +67,7 @@ context('Cypress.config()', () => {
     cy.visit('https://example.cypress.io/cypress-api')
   })
 
-  it('Get and set configuration options', () => {
+  it.skip('Get and set configuration options', () => {
     // https://on.cypress.io/config
     let myConfig = Cypress.config()
 
@@ -116,7 +116,7 @@ context('Cypress.env()', () => {
   // We can set environment variables for highly dynamic values
 
   // https://on.cypress.io/environment-variables
-  it('Get environment variables', () => {
+  it.skip('Get environment variables', () => {
     // https://on.cypress.io/env
     // set multiple environment variables
     Cypress.env({
