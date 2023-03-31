@@ -19,13 +19,15 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v5.6.1 # use the explicit version number
         with:
-          build: pnpx @cloudflare/next-on-pages --experimental-minify
-          start: pnpm start
+          build: pnpm run build 
+          start: pnpm run start
 
+      - name: Build for pages with cloudflare 
+        with:
+          build: pnpx @cloudflare/next-on-pages --experimental-minify
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
