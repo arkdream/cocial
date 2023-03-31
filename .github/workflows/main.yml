@@ -22,7 +22,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5.6.1 # use the explicit version number
         with:
-          build: pnpm run build 
+          build: pnpx @cloudflare/next-on-pages --experimental-minify 
           start: pnpm run start
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
