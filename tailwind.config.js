@@ -26,7 +26,10 @@ module.exports = {
         "theme-muted-dark":"#848B9A",
       },
       borderRadius:{
-        "theme":"20px",
+        "theme":"10px",
+      },
+      transitionDuration:{
+        "theme":"0.4s",
       }
     },
   },

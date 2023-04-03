@@ -1,4 +1,3 @@
-
 ## Getting Started
 
 First, run the development server:
@@ -10,7 +9,8 @@ yarn dev
 # or
 pnpm dev
 ```
-### Components 
+
+### Components
 
 ```
 .
@@ -31,5 +31,5 @@ pnpm dev
                 ├── 🏗️ cardTitle
                 ├── 🏗️ cardBody
                 └── 🏗️ cardImageComponents
-      
+
 ```

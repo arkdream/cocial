@@ -1,10 +1,28 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Tab } from '@/components/Tab'
+import {BsFillPersonFill, BsGlobeAmericas,BsFillBellFill} from 'react-icons/bs'
 
 export default function Home() {
+  const data = [
+    {
+      id: 1,
+      label: "Feed",
+      name : "/",
+      icon: <BsFillPersonFill className="w-5 h-5" />,
+    },
+    {
+      id: 2,
+      name : "about",
+      label: "About",
+      icon: <BsGlobeAmericas className="w-5 h-5" />,
+    },
+    {
+      id: 3,
+      name : "notifications",
+      label: "Notifications",
+      icon: <BsFillBellFill className="w-5 h-5" />,
+    },
+  ]
   return (
     <>
       <Head>
@@ -14,7 +32,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-      <h1 className='p-4 text-3xl'>Hello World</h1> 
+        <div className='w-full h-screen p-4 bg-theme-background-light dark:bg-theme-background-dark'>
+          <div className='flex flex-col gap-2'>
+            {
+              data.map((item) => 
+              <Tab key={item.id} name={item.name} icon={item.icon} label={item.label} />
+              )
+            }
+          </div>
+        </div>
       </main>
     </>
   )
