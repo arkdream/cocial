@@ -1,28 +1,33 @@
-import Head from 'next/head'
-import { Tab } from '@/components/Tab'
-import {BsFillPersonFill, BsGlobeAmericas,BsFillBellFill} from 'react-icons/bs'
+import Head from "next/head";
+import { Tab } from "@/components/Tab";
+import {
+  BsFillPersonFill,
+  BsGlobeAmericas,
+  BsFillBellFill,
+} from "react-icons/bs";
 
 export default function Home() {
   const data = [
     {
       id: 1,
       label: "Feed",
-      name : "/",
+      href: "/",
       icon: <BsFillPersonFill className="w-5 h-5" />,
     },
     {
       id: 2,
-      name : "about",
+      href: "/about",
       label: "Community",
       icon: <BsGlobeAmericas className="w-5 h-5" />,
+      alert: "3",
     },
     {
       id: 3,
-      name : "notifications",
+      href: "/notifications",
       label: "Notifications",
       icon: <BsFillBellFill className="w-5 h-5" />,
     },
-  ]
+  ];
   return (
     <>
       <Head>
@@ -31,17 +36,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main >
-        <div className='w-full h-screen p-4 bg-theme-background-light dark:bg-theme-background-dark'>
-          <div className='flex flex-col gap-2'>
-            {
-              data.map((item) => 
-              <Tab key={item.id} name={item.name} icon={item.icon} label={item.label} />
-              )
-            }
+      <main>
+        <div className="w-full h-screen p-4 bg-theme-background-light dark:bg-theme-background-dark">
+          <div className="flex flex-col gap-2">
+            {data.map((item) => (
+              <Tab
+                key={item.id}
+                href={item.href}
+                icon={item.icon}
+                label={item.label}
+                alert={item.alert}
+              />
+            ))}
           </div>
         </div>
       </main>
     </>
-  )
+  );
 }

@@ -5,7 +5,7 @@ import { MockRouter } from "@/cypress/mocks/Router";
 const icon_one = {
   id: 1,
   label: "Feed",
-  name: "/",
+  href: "/",
   icon: <BsFillPersonFill className="w-5 h-5" />,
 };
 
